@@ -2,10 +2,6 @@
 #include <math.h>
 int main (){
 
-
-    // file open: fopen("folder name/file name.file type","read only")
-    // return 1 means program was not successfull.
-
 FILE *file;
 file = fopen("bangladesh_inflation.csv", "r");
 if (file == NULL)
@@ -14,11 +10,10 @@ if (file == NULL)
   return 1;
 }
 
-
 printf ("Yes! File opened successfully!\n\n");
 
 char data [200];
-fgets(data,sizeof(data),file);   //fgets(where to keep, size of the place to keep, from where)
+fgets(data,sizeof(data),file);   
 int year;
 float inflation;
 float sum = 0;
@@ -64,7 +59,7 @@ printf ("Bangladesh inflation rate for %d was %.2f,\n\n", year,inflation);
      if (diff>0)
         {printf("Inflation increased %.2f.\n\n\n",diff);}
      else if (diff<0)
-     {printf("Inflation decreased %.2f\n\n\n",diff);}
+     {printf("Inflation decreased %.2f\n\n\n",-diff);}
      else printf("Inflation is same\n\n\n.");
 
  }
